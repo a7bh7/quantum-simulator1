@@ -1,0 +1,39 @@
+# Quantum Simulator App - ToDo List
+
+- [X] 001: Create project folder structure
+- [X] 002: Scaffold Flask application
+    - [X] Write basic Flask app structure (`src/main.py`)
+    - [X] Define base template (`src/templates/base.html`)
+    - [X] Define index page template (`src/templates/index.html`)
+    - [X] Define simulation page template (`src/templates/simulation.html`)
+    - [X] Define about page template (`src/templates/about.html`)
+    - [X] Define main routes (`src/routes/main_routes.py`)
+    - [X] Update `requirements.txt`
+    - [X] Install Flask and other dependencies
+- [X] 003: Implement frontend with Tailwind and Plotly
+    - [ ] Set up Tailwind CSS (Using CDN temporarily due to build issue)
+    - [X] Implement Landing Page UI (`src/templates/index.html`)
+    - [X] Implement Simulation Page UI (`src/templates/simulation.html`)
+    - [X] Implement About Page UI (`src/templates/about.html`)
+    - [X] Add Plotly for visualizations (JS part done, needs backend data)
+    - [X] Install Plotly
+- [ ] 004: Integrate ML model and prediction logic
+- [X] 004: Integrate Mock ML prediction logic
+    - [X] Implement mock prediction function in `src/utils/simulation_utils.py` (instead of loading .pkl)
+    - [X] Create API endpoint for prediction in `src/routes/main_routes.py`
+- [X] 005: Develop interactive simulation components
+    - [X] Create API endpoint for prediction (Done in step 004)
+    - [X] Wire up sliders in `simulation.html` to send data via JavaScript (fetch API)
+    - [X] Update right panel (predicted behavior, probabilities, pattern graph) dynamically
+- [X] 006: Add About and Footer sections
+    - [X] Populate `src/templates/about.html` with content (Placeholders for links remain)
+    - [X] Add footer to `src/templates/base.html` (Placeholders for links remain)
+- [X] 007: Test application and validate functionality
+    - [X] Test UI responsiveness (via user)
+    - [X] Test prediction logic with various inputs (via user)
+    - [X] Test navigation and links (via user)
+    - [X] Corrected Jinja template syntax errors
+    - [X] Resolved port conflict and provided working temporary link
+- [X] 005: Report and send project to user without venv
+    - [X] Zip the project folder (excluding venv)
+    - [X] Send message with zip file attached

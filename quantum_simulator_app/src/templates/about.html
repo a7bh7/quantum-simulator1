@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="text-3xl font-bold text-center mb-8 text-neon-blue">حول المشروع</h2>
+<div class="bg-card-bg p-6 rounded-lg shadow-lg max-w-3xl mx-auto border border-gray-700">
+    <h3 class="text-2xl font-semibold mb-4 text-primary-text">قصة المشروع</h3>
+    <p class="text-secondary-text mb-4 leading-relaxed">
+        يهدف هذا المشروع إلى جعل مفاهيم فيزياء الكم المعقدة، مثل تجربة الشق المزدوج، أكثر سهولة ومتعة للجمهور العام. من خلال الجمع بين محاكاة تفاعلية ونموذج تعلم الآلة، نسعى لاستكشاف كيف يمكن للذكاء الاصطناعي أن يساعد في فهم وتوقع الظواهر الكمومية الغريبة.
+    </p>
+    <p class="text-secondary-text mb-6 leading-relaxed">
+        تعتبر تجربة الشق المزدوج حجر الزاوية في ميكانيكا الكم، حيث تُظهر الطبيعة المزدوجة للجسيمات (موجة وجسيم) وتأثير المراقبة على سلوك النظام الكمومي. يتيح لك هذا التطبيق التحكم في معلمات التجربة المختلفة ورؤية كيف يتنبأ نموذج تعلم الآلة بسلوك الإلكترون الناتج.
+    </p>
+
+    <h3 class="text-2xl font-semibold mb-4 text-primary-text">كيف يعمل نموذج تعلم الآلة؟</h3>
+    <p class="text-secondary-text mb-4 leading-relaxed">
+        تم تدريب نموذج تعلم الآلة (RandomForestClassifier من مكتبة Scikit-learn) على مجموعة بيانات محاكاة لتجربة الشق المزدوج. يأخذ النموذج مدخلات مثل المسافة بين الشقين، طاقة الإلكترون، شدة المراقبة، وغيرها، ويتعلم الأنماط التي تربط هذه المعلمات بالسلوك الناتج (موجي أو جسيمي).
+    </p>
+    <p class="text-secondary-text mb-6 leading-relaxed">
+        الهدف ليس فقط التنبؤ الدقيق، بل أيضاً توضيح كيف يمكن للأدوات الحسابية الحديثة أن تساهم في استكشاف وفهم المبادئ الأساسية للفيزياء. <span class="text-gray-500">(ملاحظة: حالياً نستخدم منطق محاكاة بدلاً من النموذج الفعلي بسبب عدم توفر الملفات).</span>
+    </p>
+
+    <h3 class="text-2xl font-semibold mb-4 text-primary-text">الكود المصدري والبيانات</h3>
+    <p class="text-secondary-text mb-4">
+        الكود المصدري لهذا المشروع متاح للجميع.
+        <!-- Add GitHub link later -->
+        <a href="#" class="text-neon-blue hover:underline glow-on-hover">[رابط GitHub للمشروع هنا - سيضاف لاحقاً]</a>
+    </p>
+</div>
+{% endblock %}
+

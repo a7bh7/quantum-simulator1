@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add any custom base styles or component overrides here */
+body {
+    /* Example: Apply a custom font if needed */
+    /* font-family: 'YourCustomFont', sans-serif; */
+}
+

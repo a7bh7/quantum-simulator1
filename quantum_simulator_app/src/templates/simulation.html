@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="text-3xl font-bold text-center mb-8 text-neon-blue">محاكاة تجربة الشق المزدوج</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- Left Panel: Input Sliders -->
+    <div class="md:col-span-1 bg-card-bg p-6 rounded-lg shadow-lg border border-gray-700">
+        <h3 class="text-xl font-semibold mb-4 border-b border-gray-600 pb-2 text-primary-text">معلمات التجربة</h3>
+        <form id="simulation-form">
+            <div class="mb-6">
+                <label for="slit-distance" class="block text-sm font-medium text-secondary-text mb-1">المسافة بين الشقين (مم): <span id="slit-distance-value" class="font-mono text-neon-blue">1.25</span></label>
+                <input type="range" id="slit-distance" name="slit_distance" min="0.5" max="2.0" step="0.01" value="1.25" class="w-full cursor-pointer">
+            </div>
+            <div class="mb-6">
+                <label for="electron-energy" class="block text-sm font-medium text-secondary-text mb-1">طاقة الإلكترون (eV): <span id="electron-energy-value" class="font-mono text-neon-blue">55</span></label>
+                <input type="range" id="electron-energy" name="electron_energy" min="10" max="100" step="1" value="55" class="w-full cursor-pointer">
+            </div>
+            <div class="mb-6">
+                <label for="observation-intensity" class="block text-sm font-medium text-secondary-text mb-1">شدة المراقبة: <span id="observation-intensity-value" class="font-mono text-neon-blue">0.5</span></label>
+                <input type="range" id="observation-intensity" name="observation_intensity" min="0" max="1" step="0.01" value="0.5" class="w-full cursor-pointer">
+            </div>
+            <div class="mb-6">
+                <label for="screen-distance" class="block text-sm font-medium text-secondary-text mb-1">مسافة الشاشة (سم): <span id="screen-distance-value" class="font-mono text-neon-blue">30</span></label>
+                <input type="range" id="screen-distance" name="screen_distance" min="10" max="50" step="1" value="30" class="w-full cursor-pointer">
+            </div>
+            <div class="mb-6">
+                <label for="medium-temperature" class="block text-sm font-medium text-secondary-text mb-1">درجة حرارة الوسط (مئوية): <span id="medium-temperature-value" class="font-mono text-neon-blue">17.5</span></label>
+                <input type="range" id="medium-temperature" name="medium_temperature" min="5" max="30" step="0.1" value="17.5" class="w-full cursor-pointer">
+            </div>
+            <button type="submit" 
+                    class="w-full bg-accent-blue text-white px-4 py-3 rounded-md font-semibold 
+                           hover:bg-blue-500 hover:shadow-glow-blue transition duration-300 transform hover:scale-105 glow-on-hover">
+                توقع السلوك
+            </button>
+        </form>
+    </div>
+
+    <!-- Right Panel: Display Results -->
+    <div class="md:col-span-2 bg-card-bg p-6 rounded-lg shadow-lg border border-gray-700">
+        <h3 class="text-xl font-semibold mb-4 border-b border-gray-600 pb-2 text-primary-text">النتائج المتوقعة</h3>
+        <div id="results-output" class="space-y-6">
+            <p class="text-lg"><strong>السلوك المتوقع:</strong> <span id="predicted-behavior" class="font-mono text-neon-green text-xl ml-2">--</span></p>
+            <div class="mt-4">
+                <h4 class="text-md font-semibold mb-2 text-secondary-text">احتمالات السلوك:</h4>
+                <div id="probability-chart" class="h-48 bg-dark-bg rounded border border-gray-700 p-2">
+                    <!-- Plotly chart will be rendered here -->
+                </div>
+            </div>
+            <div class="mt-4">
+                <h4 class="text-md font-semibold mb-2 text-secondary-text">نمط التداخل المتوقع:</h4>
+                <div id="interference-pattern" class="h-64 bg-dark-bg rounded border border-gray-700 p-2">
+                    <!-- Plotly chart will be rendered here -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

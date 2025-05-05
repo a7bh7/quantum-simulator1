@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!-- Adding dark class for potential future Tailwind dark mode config -->
+<html lang="ar" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - محاكي الكم بالذكاء الاصطناعي</title>
+    <!-- Link to Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Basic Dark Mode Config for CDN -->
+    <script>
+        // Basic theme setup - apply dark classes directly
+        // For a full implementation, proper Tailwind config is needed
+        tailwind.config = {
+          darkMode: 'class', // or 'media'
+          theme: {
+            extend: {
+              colors: {
+                'neon-blue': '#00ccff',
+                'neon-green': '#39ff14',
+                'dark-bg': '#111827', // gray-900
+                'card-bg': '#1f2937', // gray-800
+                'primary-text': '#d1d5db', // gray-300
+                'secondary-text': '#9ca3af', // gray-400
+                'accent-purple': '#6d28d9', // violet-700
+                'accent-blue': '#2563eb', // blue-600
+              },
+              boxShadow: {
+                'glow-blue': '0 0 15px rgba(0, 204, 255, 0.5)',
+                'glow-purple': '0 0 15px rgba(109, 40, 217, 0.5)',
+              }
+            }
+          }
+        }
+    </script>
+    <!-- Link to custom CSS (if needed later) -->
+    <!-- <link rel="stylesheet" href="{{ url_for('main_bp.static', filename='css/styles.css') }}"> -->
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+    <style>
+        /* Custom scrollbar for webkit browsers */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1f2937; /* gray-800 */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4b5563; /* gray-600 */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6b7280; /* gray-500 */
+        }
+        /* Basic glow effect class */
+        .glow-on-hover {
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .glow-on-hover:hover {
+            box-shadow: 0 0 15px rgba(0, 204, 255, 0.6); /* neon-blue glow */
+        }
+         /* Custom slider styles (basic example) */
+        input[type=range] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 8px;
+            background: #374151; /* gray-700 */
+            border-radius: 5px;
+            outline: none;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #00ccff; /* neon-blue */
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 5px rgba(0, 204, 255, 0.7);
+        }
+        input[type=range]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: #00ccff; /* neon-blue */
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 0 5px rgba(0, 204, 255, 0.7);
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-primary-text font-sans">
+    <nav class="bg-card-bg text-primary-text p-4 shadow-md sticky top-0 z-50 border-b border-gray-700">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="{{ url_for('main_bp.index') }}" class="text-xl font-bold text-neon-blue">محاكي تجربة الشق المزدوج</a>
+            <div>
+                <a href="{{ url_for('main_bp.index') }}" class="px-3 py-2 rounded hover:bg-gray-700 hover:text-neon-blue transition duration-200">الرئيسية</a>
+                <a href="{{ url_for('main_bp.simulation') }}" class="px-3 py-2 rounded hover:bg-gray-700 hover:text-neon-blue transition duration-200">المحاكاة</a>
+                <a href="{{ url_for('main_bp.about') }}" class="px-3 py-2 rounded hover:bg-gray-700 hover:text-neon-blue transition duration-200">حول المشروع</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto mt-8 p-4">
+        {% block content %}
+        <!-- Content from child templates will be injected here -->
+        {% endblock %}
+    </main>
+
+    <footer class="bg-black text-secondary-text text-center p-6 mt-12 border-t border-gray-700">
+        <p>تم التطوير بواسطة عبدالله</p>
+        <p>مدعوم بواسطة Python, Flask, Scikit-learn</p>
+        <!-- Add social media links later: <a href="#" class="text-neon-blue hover:underline">GitHub</a> -->
+    </footer>
+
+    <!-- Link to custom JS -->
+    <script src="{{ url_for('main_bp.static', filename='js/script.js') }}"></script>
+</body>
+</html>
+
